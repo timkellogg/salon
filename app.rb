@@ -58,11 +58,15 @@ post '/clients' do
 	redirect '/clients'
 end
 
-# # stylists -- edit
-# get '/stylist/:id/edit' do
-# 	id = params['id'].to_i
-# 	@fname
-# end
+# stylists -- edit
+get '/stylist/:id/edit' do
+	id        = params['id'].to_i
+	@stylist  = Stylist.find id
+	@fname    = @stylist.fname
+	@lname    = @stylist.lname
+	@styles   = @stylist.styles
+	erb :stylist_edit_form
+end
 
 # clients -- edit
 get '/client/:id/edit' do
