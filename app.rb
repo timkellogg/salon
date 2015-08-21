@@ -19,5 +19,10 @@ end
 # clients -- index
 get '/clients' do
   @clients = Client.all
-	erb :clients 
+	erb :clients
+end
+
+# clients -- new
+get '/stylist/new' do
+	erb :stylist_create_form
 end

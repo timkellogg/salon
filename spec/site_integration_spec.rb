@@ -24,11 +24,18 @@ end
 
 describe 'when creating a stylist', { type: :feature } do
 
-	before { visit '/stylists' }
+	before { visit '/stylist/new' }
 
 	it 'should render a form' do
-		expect(page).to have_content 'Current Stylists'
+		expect(page).to have_content 'Add a new stylist'
+		expect(page).to have_content 'First name:'
+		expect(page).to have_content 'Last name:'
+		expect(page).to have_content 'Styles:'
 	end
 
-	
+	# it 'should create a new stylist when submitted' do
+	#
+	# end
+
+
 end
