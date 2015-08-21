@@ -2,6 +2,7 @@ require 'pg'
 require 'rspec'
 require './app'
 require 'client'
+require 'stylist'
 
 DB = PG.connect({ dbname: 'hair_salon_test' })
 
