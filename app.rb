@@ -114,6 +114,16 @@ patch '/client/:id' do
 	erb :client
 end
 
+patch '/stylist/:id' do
+	id         = params['id'].to_i
+	@stylist   = Stylist.find id
+	fname      = params['fname']
+	lname      = params['lname']
+	styles     = params['styles']
+	@stylist.update({ fname: fname, lname: lname, styles: styles })
+	erb :stylist
+end
+
 # stylists -- destroy
 get '/stylists/:id' do
 	id = params['id'].to_i

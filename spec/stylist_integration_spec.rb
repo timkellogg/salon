@@ -28,12 +28,19 @@ describe 'when creating a stylist', { type: :feature } do
 		expect(page).to have_content 'Styles:'
 	end
 
-	it 'should create a new stylist when submitted and render the page of all stylists' do
+	it 'should create a new stylist when submitted and render the page of all stylists allowing
+	    the user to update and delete' do
 		visit '/stylist/new'
 		fill_in 'fname',  with: 'Joe'
 		fill_in 'lname',  with: 'Pesci'
 		fill_in 'styles', with: 'modern'
 		click_button 'Add stylist'
 		expect(page).to have_content 'Joe Pesci'
+		click_link 'Update'
+		fill_in 'fname',  with: 'John'
+		click_button 'Submit edit'
+		expect(page).to have_content 'John'
+		click_link 'Destroy'
+		expect(page).to_not have_content 'John'
 	end
 end
