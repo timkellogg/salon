@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Stylist do 
 
-	before { @stylist = Stylist.new({ fname: 'Sara', lname: 'Adams', styles: ['modern'], id: nil }) }
+	before { @stylist = Stylist.new({ fname: 'Sara', lname: 'Adams', styles: 'modern', id: nil }) }
 
 	describe '#fname' do 
 		it 'should return the first name of the stylist' do  
@@ -18,7 +18,7 @@ describe Stylist do
 
 	describe '#style' do  
 		it 'should return the hair style options of the stylist' do 
-			expect(@stylist.styles).to eq ['modern']
+			expect(@stylist.styles).to eq 'modern'
 		end
 	end
 
@@ -36,6 +36,9 @@ describe Stylist do
 	end
 
 	describe '#==' do 
-		
+		it 'should consider as equal two stylists whose attributes are equal' do 
+			another_stylist = Stylist.new({ fname: 'Sara', lname: 'Adams', styles: 'modern', id: nil })
+			expect(@stylist).to eq another_stylist
+		end
 	end
 end

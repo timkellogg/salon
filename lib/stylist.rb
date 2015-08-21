@@ -16,6 +16,13 @@ class Stylist
 		@id    = result.first['id'].to_i 
 	end
 
+	def == (another_stylist)
+		self.fname  == another_stylist.fname  && 
+		self.lname  == another_stylist.lname  &&
+		self.styles == another_stylist.styles &&
+		self.id     == another_stylist.id 
+	end
+
 	def delete 
 	end
 
