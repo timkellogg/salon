@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Stylist do 
 
-	before { @stylist = Stylist.new({ fname: 'Sara', lname: 'Adams', style: 'modern', id: nil }) }
+	before { @stylist = Stylist.new({ fname: 'Sara', lname: 'Adams', styles: ['modern'], id: nil }) }
 
 	describe '#fname' do 
 		it 'should return the first name of the stylist' do  
@@ -17,14 +17,21 @@ describe Stylist do
 	end
 
 	describe '#style' do  
-		it 'should return the hair style of the stylist' do 
-			expect(@stylist.style).to eq 'modern'
+		it 'should return the hair style option of the stylist' do 
+			expect(@stylist.styles).to eq ['modern']
 		end
 	end
 
 	describe '#id' do  
 		it 'should return the id of the stylist' do 
 			expect(@stylist.id).to eq nil 
+		end
+	end
+
+	describe '#save' do 
+		it 'should store the stylist in the database' do 
+			@stylist.save 
+			expect(Stylist.all).to eq [@stylist]
 		end
 	end
 end
