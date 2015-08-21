@@ -8,11 +8,35 @@
 	</head>
 	<body>
 		<div id="site-wrapper" class="container">
-			<%= yield %>
 
-			<div class="row">
-				<a class="button" href="/">Home</a>
-			</div>
+			<nav class="top-bar" data-topbar role="navigation">
+			  <ul class="title-area">
+			    <li class="name">
+			      <h1><a href="/">RzCz</a></h1>
+			    </li>
+			    <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+			  </ul>
+			  <section class="top-bar-section">
+			    <ul class="right">
+			      <li class="has-dropdown">
+			        <a href="#">Portals </a>
+			        <ul class="dropdown">
+			          <li><a href="/clients">View Clients</a></li>
+			          <li class="active"><a href="/stylists">View Stylists</li></a>
+			        </ul>
+			      </li>
+			    </ul>
+			  </section>
+			</nav>
+
+			<%= yield %>
 		</div>
+			<script src="/js/vendor/modernizr.js"></script>
+			<script src="/js/vendor/jquery.js"></script>
+			<script src="/js/vendor/fastclick.js"></script>
+			<script src="/js/foundation.min.js"></script>
+			<script>
+			  $(document).foundation();
+			</script>
 	</body>
 </html>

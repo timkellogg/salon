@@ -15,6 +15,6 @@ h2 {
 }
 
 /* Navigation */
-.top-bar {
-	opacity: .7;
+.top-bar .name h1 a  {
+	color: gold;
 }
