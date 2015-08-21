@@ -64,6 +64,38 @@ class Client
 	end
 
 	# update 
-	def update
+	def update (attributes)
+		@fname 			 = attributes[:fname]
+		@lname 			 = attributes[:lname]
+		@address 		 = attributes[:address]
+		@hair_color  = attributes[:hair_color]
+		@phone 			 = attributes[:phone]
+		@stylist_id  = attributes[:stylist_id]
+		DB.exec("UPDATE clients SET fname = '#{@fname}', lname = '#{@lname}', address = '#{@address}', hair_color = '#{@hair_color}', phone = '#{@phone}', stylist_id = #{@stylist_id} WHERE id = #{@id};")
 	end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
