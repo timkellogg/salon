@@ -70,6 +70,12 @@ describe Client do
 		end
 	end
 
+	describe '.find' do  
+		it 'should return the client by it\'s id' do 
+			@client.save 
+			expect(Client.find(@client.id)).to eq @client 
+		end
+	end
 end
 
 
