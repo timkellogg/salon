@@ -24,10 +24,10 @@ class Client
 			fname 			= client['fname']
 			lname 			= client['lname']
 			address 		= client['address']
-			hair_color = client['hair_color']
+			hair_color  = client['hair_color']
 			phone 			= client['phone']
-			stylist_id = client['stylist_id'].to_i 
-			id 				= client['id'].to_i 
+			stylist_id  = client['stylist_id'].to_i 
+			id 				  = client['id'].to_i 
 			clients.push Client.new({ fname: fname, lname: lname, address: address, hair_color: hair_color, phone: phone, stylist_id: stylist_id, id: id })
 		end
 		clients 
@@ -35,6 +35,8 @@ class Client
 
 	# save 
 	def save 
+		result = DB.exec("INSERT INTO clients (fname, lname, address, hair_color, phone, stylist_id) VALUES ('#{@fname}', '#{@lname}', '#{@address}', '#{@hair_color}', '#{@phone}', #{@stylist_id}) RETURNING id;")
+		@id    = result.first['id']
 	end
 
 	# delete 

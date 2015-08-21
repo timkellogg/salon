@@ -55,4 +55,11 @@ describe Client do
 		end
 	end
 
+	describe '#save' do 
+		it 'should store the client into the database' do  
+			@client.save 
+			expect(Client.all).to eq [@client]
+		end
+	end
+
 end
