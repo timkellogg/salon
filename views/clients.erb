@@ -1,6 +1,6 @@
 <h2>Current Clients:</h2>
 
-<% if @clients %>
+<% if @clients && Stylist.all.any? %>
 <table>
   <tr>
     <th>First Name:</th>

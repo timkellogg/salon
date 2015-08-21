@@ -36,17 +36,15 @@
     </div>
   </div>
   <div class="row">
-    <% if @stylists.any? %>
     <div class="large-12 columns">
       <label for="stylist_id">Select a stylist:</label>
-      <select name="stylist_id">
+      <select required name="stylist_id">
         <% @stylists.each do |stylist| %>
           <option value="<%= stylist.id %>"><%= stylist.fname %></option>
         <% end %>
       </select>
     </div>
   </div>
-  <% end %>
   <div class="row">
     <div class="large-12 columns">
       <button type="submit">Add client</button>
