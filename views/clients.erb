@@ -9,6 +9,8 @@
     <th>Hair Color:</th>
     <th>Phone:</th>
     <th>Stylist:</th>
+    <th>Edit:</th>
+    <th>Delete:</th>
   </tr>
   <% @clients.each do |client| %>
     <tr>
@@ -18,6 +20,8 @@
       <td><%= client.hair_color %></td>
       <td><%= client.phone %></td>
       <td><%= Stylist.find((client.stylist_id).to_i).lname %>, <%= Stylist.find((client.stylist_id).to_i).fname %></td>
+      <td><a href="/client/<%= client.id %>/edit">Edit</a></td>
+      <td><a href="/client/"></a></td>
     </tr>
   <% end %>
 </table>

@@ -20,7 +20,7 @@
   <label for="stylist_id">Select a stylist:</label>
   <select name="stylist_id">
     <% @stylists.each do |stylist| %>
-      <option value="<%= stylist.id %>"><%= stylist.lname %>, <%= stylist.fname %> | <%= stylist.styles %></option>
+      <option value="<%= stylist.id %>"><%= stylist.lname %></option>
     <% end %>
   </select>
   <button type="submit">Add client</button>

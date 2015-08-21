@@ -3,10 +3,11 @@ require 'sinatra/reloader'
 require './lib/client.rb'
 require './lib/stylist.rb'
 require 'pg'
+require 'pry'
 
 DB = PG.connect({ dbname: 'hair_salon' })
 
-get '/'  do
+get '/' do
 	erb(:index)
 end
 

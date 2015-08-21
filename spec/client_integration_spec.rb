@@ -36,7 +36,6 @@ describe 'when creating a client', { type: :feature } do
 		fill_in 'address',    with: 'Times Square'
     fill_in 'hair_color', with: 'strange'
     fill_in 'phone',      with: '555-5555'
-    select 'Pesci',       from: 'stylist_id'
 		click_button 'Add client'
 		expect(page).to have_content 'Donald Trump'
 	end
