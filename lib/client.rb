@@ -35,7 +35,8 @@ class Client
 			phone 			= client['phone']
 			stylist_id  = client['stylist_id'].to_i 
 			id 				  = client['id'].to_i 
-			clients.push Client.new({ fname: fname, lname: lname, address: address, hair_color: hair_color, phone: phone, stylist_id: stylist_id, id: id })
+			clients.push Client.new({ fname: fname, lname: lname, address: address, hair_color: hair_color, 
+				                        phone: phone, stylist_id: stylist_id, id: id })
 		end
 		clients 
 	end
@@ -71,7 +72,9 @@ class Client
 		@hair_color  = attributes[:hair_color]
 		@phone 			 = attributes[:phone]
 		@stylist_id  = attributes[:stylist_id]
-		DB.exec("UPDATE clients SET fname = '#{@fname}', lname = '#{@lname}', address = '#{@address}', hair_color = '#{@hair_color}', phone = '#{@phone}', stylist_id = #{@stylist_id} WHERE id = #{@id};")
+		DB.exec("UPDATE clients 
+			       SET fname = '#{@fname}', lname = '#{@lname}', address = '#{@address}', hair_color = '#{@hair_color}', 
+			           phone = '#{@phone}', stylist_id = #{@stylist_id} WHERE id = #{@id};")
 	end
 end
 
