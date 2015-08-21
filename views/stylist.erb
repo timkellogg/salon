@@ -1,3 +1,5 @@
 <h2><%= @stylist.fname %>, <%= @stylist.lname %></h2>
 
 <a class="button" href="/stylists">View all stylists</a>
+<a class="button info" href="/stylist/<%= @stylist.id %>/edit">Edit</a>
+<a class="button warning" href="/stylists/<%= @stylist.id %>">Destroy</a>

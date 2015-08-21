@@ -1,6 +1,7 @@
 <h2>Current Clients:</h2>
 
 <% if @clients && Stylist.all.any? %>
+<div class="row">
 <table>
   <tr>
     <th>First Name:</th>
@@ -28,6 +29,7 @@
   <% end %>
 </table>
 
+</div>
 <% else %>
   <p>
     You need to make a stylist first!

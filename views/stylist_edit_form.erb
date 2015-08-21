@@ -2,14 +2,31 @@
 
 <form action="/stylist/<%= @stylist.id %>" method="post">
   <input name="_method" type="hidden" value="patch">
-  <label for="fname">First name:</label>
-  <input type="text" name="fname" placeholder="e.x. Michael" value="<%= @stylist.fname %>">
 
-  <label for="lname">Last name:</label>
-  <input type="text" name="lname" placeholder="e.x. Jordan" value="<%= @stylist.lname %>">
+  <div class="row">
+    <div class="large-12 columns">
+      <label for="fname">First name:</label>
+      <input type="text" name="fname" placeholder="e.x. Michael" value="<%= @stylist.fname %>">
+    </div>
+  </div>
 
-  <label for="styles">Styles: </label>
-  <input type="text" name="styles" placeholder="e.x. modern" value="<%= @stylist.styles %>">
+  <div class="row">
+    <div class="large-12 columns">
+      <label for="lname">Last name:</label>
+      <input type="text" name="lname" placeholder="e.x. Jordan" value="<%= @stylist.lname %>">
+    </div>
+  </div>
 
-  <button type="submit">Submit edit</button>
+  <div class="row">
+    <div class="large-12 columns">
+      <label for="styles">Styles: </label>
+      <input type="text" name="styles" placeholder="e.x. modern" value="<%= @stylist.styles %>">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-12 text-center column">
+      <button type="submit">Submit edit</button>
+    </div>
+  </div>
 </form>
