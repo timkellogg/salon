@@ -62,12 +62,33 @@ end
 get '/client/:id/edit' do
 	@stylists   = Stylist.all
 	id          = params['id'].to_i
-	client      = Client.find(id)
-	@fname      = client.fname
-	@lname      = client.lname
-	@address    = client.address
-	@hair_color = client.hair_color
-	@phone 		  = client.phone
-	@stylist_id = client.stylist_id.to_i
+	@client     = Client.find id
+	@fname      = @client.fname
+	@lname      = @client.lname
+	@address    = @client.address
+	@hair_color = @client.hair_color
+	@phone 		  = @client.phone
+	@stylist_id = @client.stylist_id.to_i
 	erb :client_edit_form
+end
+
+# clients -- update
+patch '/client/:id' do
+	id         = params['id'].to_i
+	@client    = Client.find id
+	fname      = params['fname']
+	lname      = params['lname']
+	address    = params['address']
+	hair_color = params['hair_color']
+	phone      = params['phone']
+	stylist_id = params['stylist_id'].to_i
+	@client.update({ fname: fname, lname: lname, address: address, hair_color: hair_color,
+		               phone: phone, stylist_id: stylist_id })
+	erb :client
+end
+
+# clients -- show
+get '/client/:id' do
+	@client = Client.find @client.id.to_i
+	erb :client
 end

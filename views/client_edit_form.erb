@@ -1,6 +1,7 @@
 <h2>Edit Client</h2>
 
-<form action="/clients" method="post">
+<form action="/client/<%= @client.id %>" method="post">
+  <input name="_method" type="hidden" value="patch">
 
   <label for="fname">First name:</label>
   <input type="text" name="fname" placeholder="e.x. Barack" value="<%= @fname %>">
