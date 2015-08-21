@@ -26,3 +26,13 @@ end
 get '/stylist/new' do
 	erb :stylist_create_form
 end
+
+post '/stylists' do
+	fname   = params['fname']
+	lname   = params['lname']
+	styles  = params['styles']
+	stylist = Stylist.new({ fname: fname, lname: lname, styles: styles, id: nil })
+	stylist.save
+	redirect '/stylists'
+	erb :stylist
+end
