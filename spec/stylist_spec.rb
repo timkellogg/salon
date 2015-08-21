@@ -41,4 +41,27 @@ describe Stylist do
 			expect(@stylist).to eq another_stylist
 		end
 	end
+
+	describe '#delete' do 
+		it 'should destory the stylist record' do 
+			@client.save 
+			@client.delete 
+			expect(Client.all).to eq []
+		end
+	end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

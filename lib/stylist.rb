@@ -24,6 +24,7 @@ class Stylist
 	end
 
 	def delete 
+		DB.exec("DELETE FROM stylists WHERE id = #{self.id}")
 	end
 
 	def update 
