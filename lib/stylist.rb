@@ -22,9 +22,19 @@ class Stylist
 	def update 
 	end
 
-	def find 
+	def self.find 
 	end
 
-	def all
+	def self.all
+		returned_stylists = DB.exec("SELECT * FROM stylists;")
+		stylists          = []
+		returned_stylists.each do |stylist|
+			@fname 			= stylist['fname']
+			@lname 			= stylist['lname']
+			@styles			= stylist['styles']
+			@id 				= stylist['id'].to_i
+			stylists.push Stylist.new({ fname: @fname, lname: @lname, styles: @styles, id: @id })
+		end
+		stylists
 	end
 end

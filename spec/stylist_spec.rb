@@ -17,7 +17,7 @@ describe Stylist do
 	end
 
 	describe '#style' do  
-		it 'should return the hair style option of the stylist' do 
+		it 'should return the hair style options of the stylist' do 
 			expect(@stylist.styles).to eq ['modern']
 		end
 	end
@@ -34,4 +34,5 @@ describe Stylist do
 			expect(Stylist.all).to eq [@stylist]
 		end
 	end
+
 end
