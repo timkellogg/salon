@@ -27,7 +27,13 @@ class Stylist
 		DB.exec("DELETE FROM stylists WHERE id = #{self.id}")
 	end
 
-	def update 
+	def update (attributes)
+		@fname 			 = attributes[:fname]
+		@lname 			 = attributes[:lname]
+		@styles 		 = attributes[:styles]
+		DB.exec("UPDATE stylists 
+			       SET fname = '#{@fname}', lname = '#{@lname}', styles = '#{@styles}'
+			       WHERE id = #{@id};")
 	end
 
 	def self.find (other_stylist_id)

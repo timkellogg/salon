@@ -89,7 +89,7 @@ describe Client do
 		it 'should update multiple attributes of the client without changing others' do  
 			@client.save 
 			@client.update({ fname: 'Small', lname: 'McTinyMicroscopic', address: '123 Secondary Street', 
-			                 hair_color: 'orange', phone: '7654321', stylist_id: 1, id: nil })
+			                 hair_color: 'orange', phone: '7654321', stylist_id: 1 })
 			expect(@client.fname).to eq 'Small'
 			expect(@client.lname).to eq 'McTinyMicroscopic'
 			expect(@client.stylist_id).to eq 1

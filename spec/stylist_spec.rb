@@ -57,11 +57,18 @@ describe Stylist do
 		end
 	end
 
+	describe '#update' do 
+		it 'should update multiple attributes of the stylist without changing others' do  
+			@stylist.save 
+			@stylist.update({ fname: 'Bruce', lname: 'Wayne', styles: 'modern'})
+			expect(@stylist.fname).to eq 'Bruce'
+			expect(@stylist.styles).to eq 'modern'
+			puts @stylist.id
+		end
+	end
+
+	
 end
-
-
-
-
 
 
 
