@@ -1,14 +1,18 @@
 <html>
 	<head lang="en">
 		<title>RaZor CutZ</title>
-		<link rel="stylesheet" type="text/css" href="normalize.css">
-		<link rel="stylesheet" type="text/css" href="foundation.min.css">
-		<link rel='stylesheet' href='main.css'>
+		<link rel="stylesheet" type="text/css" href="<%= url('/normalize.css') %>">
+		<link rel="stylesheet" type="text/css" href="<%= url('/foundation.min.css') %>">
+		<link rel='stylesheet' href="<%= url('/main.css') %>">
+
 	</head>
 	<body>
 		<div id="site-wrapper" class="container">
 			<%= yield %>
+
+			<div class="row">
+				<a class="button" href="/">Home</a>
+			</div>
 		</div>
 	</body>
 </html>
-
