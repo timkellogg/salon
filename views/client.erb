@@ -1,5 +1,17 @@
-<h2><%= @client.fname %>, <%= @client.lname %></h2>
+<h2><%= @client.lname %>, <%= @client.fname %></h2>
 
-<a class="button" href="/clients">View All Clients</a>
-<a class="button info" href="/client/<%= @client.id %>/edit">Edit</a>
-<a class="button warning" href="/clients/<%= @client.id %>">Destroy</a>
+<div class="row">
+  <div class="text-left">
+    <b>First Name:</b> <%= @client.fname %><br>
+    <b>Last Name:</b> <%= @client.lname %><br>
+    <b>Address:</b> <%= @client.address %><br>
+    <b>Hair Color:</b> <%= @client.hair_color %><br>
+    <b>Phone #:</b> <%= @client.phone %><br>
+  </div>
+</div>
+
+<div class="row text-center">
+  <a class="button" href="/clients">View All Clients</a>
+  <a class="button info" href="/client/<%= @client.id %>/edit">Edit</a>
+  <a class="button warning" href="/clients/<%= @client.id %>">Destroy</a>
+</div>
