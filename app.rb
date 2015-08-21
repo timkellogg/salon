@@ -1,4 +1,4 @@
-require 'sinatra' 
+require 'sinatra'
 require 'sinatra/reloader'
 require './lib/client.rb'
 require './lib/stylist.rb'
@@ -10,4 +10,8 @@ get '/'  do
 	erb(:index)
 end
 
-
+# stylists index
+get '/stylists' do
+	@stylists = Stylist.all
+	erb :stylists
+end
