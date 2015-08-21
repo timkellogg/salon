@@ -8,8 +8,21 @@ require 'pry'
 DB = PG.connect({ dbname: 'hair_salon' })
 
 get '/' do
-	erb(:index)
+	erb :index
 end
+
+# clients -- new
+get '/client/new' do
+	@stylists = Stylist.all
+	erb :client_create_form
+end
+
+# stylists -- new
+get '/stylist/new' do
+	@stylists = Stylist.all
+	erb :stylist_create_form
+end
+
 
 # stylists -- index
 get '/stylists' do
@@ -23,16 +36,20 @@ get '/clients' do
 	erb :clients
 end
 
-# stylists -- new
-get '/stylist/new' do
-	erb :stylist_create_form
+# clients -- show
+get '/client/:id' do
+	id      = params['id'].to_i
+	@client = Client.find id
+	erb :client
 end
 
-# clients -- new
-get '/client/new' do
-	@stylists = Stylist.all
-	erb :client_create_form
+# stylists -- show
+get '/stylist/:id' do
+	id       = params['id'].to_i
+	@stylist = Stylist.find id
+	erb :stylist
 end
+
 
 # stylists -- create
 post '/stylists' do
@@ -95,20 +112,6 @@ patch '/client/:id' do
 	@client.update({ fname: fname, lname: lname, address: address, hair_color: hair_color,
 		               phone: phone, stylist_id: stylist_id })
 	erb :client
-end
-
-# clients -- show
-get '/client/:id' do
-	id      = params['id'].to_i
-	@client = Client.find id
-	erb :client
-end
-
-# stylists -- show
-get '/stylist/:id' do
-	id       = params['id'].to_i
-	@stylist = Stylist.find id
-	erb :stylist
 end
 
 # stylists -- destroy

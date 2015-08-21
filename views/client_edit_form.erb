@@ -3,26 +3,50 @@
 <form action="/client/<%= @client.id %>" method="post">
   <input name="_method" type="hidden" value="patch">
 
-  <label for="fname">First name:</label>
-  <input type="text" name="fname" placeholder="e.x. Barack" value="<%= @fname %>">
+  <div class="row">
+    <div class="large-12 columns">
+      <label for="fname">First name:</label>
+      <input type="text" name="fname" placeholder="e.x. Barack" value="<%= @fname %>">
+    </div>
+  </div>
 
-  <label for="lname">Last name:</label>
-  <input type="text" name="lname" placeholder="e.x. Obama" value="<%= @lname %>">
+  <div class="row">
+    <div class="large-12 columns">
+      <label for="lname">Last name:</label>
+      <input type="text" name="lname" placeholder="e.x. Obama" value="<%= @lname %>">
+    </div>
+  </div>
 
-  <label for="address">Address:</label>
-  <input type="text" name="address" placeholder="e.x. 1600 Pennsylvania Ave, Washington DC" value="<%= @address %>">
+  <div class="row">
+    <div class="large-12 columns">
+      <label for="address">Address:</label>
+      <input type="text" name="address" placeholder="e.x. 1600 Pennsylvania Ave, Washington DC" value="<%= @address %>">
+    </div>
+  </div>
 
-  <label for="hair_color">Hair color:</label>
-  <input type="text" name="hair_color" placeholder="e.x. black" value="<%= @hair_color %>">
+  <div class="row">
+    <div class="large-12 columns">
+      <label for="hair_color">Hair color:</label>
+      <input type="text" name="hair_color" placeholder="e.x. black" value="<%= @hair_color %>">
+    </div>
+  </div>
 
-  <label for="phone">Phone: </label>
-  <input type="text" name="phone" placeholder="e.x. 202-123-4567" value="<%= @phone %>">
+  <div class="row">
+    <div class="large-12 columns">
+      <label for="phone">Phone: </label>
+      <input type="text" name="phone" placeholder="e.x. 202-123-4567" value="<%= @phone %>">
+    </div>
+  </div>
 
-  <label for="stylist_id">Select a stylist:</label>
-  <select name="stylist_id">
-    <% @stylists.each do |stylist| %>
-      <option value="<%= stylist.id %>"><%= stylist.lname %></option>
-    <% end %>
-  </select>
+  <div class="row">
+    <div class="large-12 columns">
+      <label for="stylist_id">Select a stylist:</label>
+      <select name="stylist_id">
+        <% @stylists.each do |stylist| %>
+          <option value="<%= stylist.id %>"><%= stylist.lname %></option>
+        <% end %>
+      </select>
+    </div>
+  </div>
   <button type="submit">Submit edit</button>
 </form>
