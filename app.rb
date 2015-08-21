@@ -92,3 +92,11 @@ get '/client/:id' do
 	@client = Client.find @client.id.to_i
 	erb :client
 end
+
+# clients -- destroy
+get '/clients/:id' do
+	id      = params['id'].to_i
+	client  = Client.find id
+	client.delete
+	redirect '/clients'
+end
