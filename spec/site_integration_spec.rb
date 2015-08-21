@@ -29,4 +29,6 @@ describe 'when creating a stylist', { type: :feature } do
 	it 'should render a form' do
 		expect(page).to have_content 'Current Stylists'
 	end
+
+	
 end

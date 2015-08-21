@@ -10,8 +10,14 @@ get '/'  do
 	erb(:index)
 end
 
-# stylists index
+# stylists -- index
 get '/stylists' do
 	@stylists = Stylist.all
 	erb :stylists
+end
+
+# clients -- index
+get '/clients' do
+  @clients = Client.all
+	erb :clients 
 end
