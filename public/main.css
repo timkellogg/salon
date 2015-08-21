@@ -1,0 +1,30 @@
+body  {
+  background: url('bg.jpeg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+h1, h2 {
+	color: white;
+	font-weight: 800;
+	font-variant: small-caps;
+}
+
+h2 {
+	font-size: 4em;
+	text-align: center;
+}
+
+.z {
+	vertical-align: sub;
+	font-size: 1.4em;
+	color: gold;
+	font-style: italic;
+}
+
+/* Navigation */
+.top-bar {
+	opacity: .7;
+}
