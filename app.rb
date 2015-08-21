@@ -89,7 +89,8 @@ end
 
 # clients -- show
 get '/client/:id' do
-	@client = Client.find @client.id.to_i
+	id      = params['id'].to_i
+	@client = Client.find id
 	erb :client
 end
 
