@@ -58,6 +58,12 @@ post '/clients' do
 	redirect '/clients'
 end
 
+# # stylists -- edit
+# get '/stylist/:id/edit' do
+# 	id = params['id'].to_i
+# 	@fname
+# end
+
 # clients -- edit
 get '/client/:id/edit' do
 	@stylists   = Stylist.all
@@ -92,6 +98,13 @@ get '/client/:id' do
 	id      = params['id'].to_i
 	@client = Client.find id
 	erb :client
+end
+
+# stylists -- show
+get '/stylist/:id' do
+	id       = params['id'].to_i
+	@stylist = Stylist.find id
+	erb :stylist
 end
 
 # clients -- destroy
