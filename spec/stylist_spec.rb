@@ -63,11 +63,8 @@ describe Stylist do
 			@stylist.update({ fname: 'Bruce', lname: 'Wayne', styles: 'modern'})
 			expect(@stylist.fname).to eq 'Bruce'
 			expect(@stylist.styles).to eq 'modern'
-			puts @stylist.id
 		end
 	end
-
-	
 end
 
 

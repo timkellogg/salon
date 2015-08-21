@@ -3,6 +3,7 @@ require 'rspec'
 require './app'
 require 'client'
 require 'stylist'
+require 'capybara/rspec'
 
 DB = PG.connect({ dbname: 'hair_salon_test' })
 
