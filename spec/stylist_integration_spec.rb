@@ -40,6 +40,9 @@ describe 'when creating a stylist', { type: :feature } do
 		fill_in 'fname',  with: 'John'
 		click_button 'Submit edit'
 		expect(page).to have_content 'John'
+		save_and_open_page
+		expect(page).to have_content 'John'
+		click_link 'View all stylists'
 		click_link 'Destroy'
 		expect(page).to_not have_content 'John'
 	end
