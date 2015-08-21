@@ -25,9 +25,9 @@ describe 'when creating a client', { type: :feature } do
 		expect(page).to have_content 'First name:'
 		expect(page).to have_content 'Last name:'
 		expect(page).to have_content 'Address:'
-    expect(page).to have_content 'Hair Color:'
+    expect(page).to have_content 'Hair color:'
     expect(page).to have_content 'Phone:'
-    expect(page).to have_content 'Select a Stylist:'
+    expect(page).to have_content 'Select a stylist:'
 	end
 
 	it 'should create a new client when submitted and render the page of all clients' do

@@ -1,1 +1,26 @@
 <h2>Current Clients:</h2>
+
+<% if @clients %>
+<table>
+  <tr>
+    <th>First Name:</th>
+    <th>Last Name:</th>
+    <th>Address:</th>
+    <th>Hair Color:</th>
+    <th>Phone:</th>
+    <th>Stylist:</th>
+  </tr>
+  <% @clients.each do |client| %>
+    <tr>
+      <td><%= client.fname %></td>
+      <td><%= client.lname %></td>
+      <td><%= client.address %></td>
+      <td><%= client.hair_color %></td>
+      <td><%= client.phone %></td>
+      <td><%= Stylist.find((client.stylist_id).to_i).lname %>, <%= Stylist.find((client.stylist_id).to_i).fname %></td>
+    </tr>
+  <% end %>
+</table>
+<% end %>
+
+<a class="button" href="/client/new">Add a new client</a>
