@@ -36,6 +36,7 @@
     </div>
   </div>
   <div class="row">
+    <% if @stylists.any? %>
     <div class="large-12 columns">
       <label for="stylist_id">Select a stylist:</label>
       <select name="stylist_id">
@@ -45,6 +46,7 @@
       </select>
     </div>
   </div>
+  <% end %>
   <div class="row">
     <div class="large-12 columns">
       <button type="submit">Add client</button>

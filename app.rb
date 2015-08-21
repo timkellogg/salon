@@ -33,6 +33,7 @@ end
 # clients -- index
 get '/clients' do
   @clients = Client.all
+	@stylists = Stylist.all
 	erb :clients
 end
 

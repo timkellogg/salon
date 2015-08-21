@@ -1,6 +1,6 @@
 <h2>Current Clients:</h2>
 
-<% if @clients %>
+<% if @clients && @stylists.any? %>
 <table>
   <tr>
     <th>First Name:</th>
@@ -27,6 +27,11 @@
     </tr>
   <% end %>
 </table>
+
+<% else %>
+  <p>
+    You need to make a stylists first!
+  </p>
 <% end %>
 
 <a class="button" href="/client/new">Add a new client</a>
