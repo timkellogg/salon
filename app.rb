@@ -111,6 +111,14 @@ get '/stylist/:id' do
 	erb :stylist
 end
 
+# stylists -- destroy
+get '/stylists/:id' do
+	id = params['id'].to_i
+	stylist = Stylist.find id
+	stylist.delete
+	redirect '/stylists'
+end
+
 # clients -- destroy
 get '/clients/:id' do
 	id      = params['id'].to_i
