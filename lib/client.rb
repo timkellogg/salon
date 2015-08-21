@@ -35,11 +35,23 @@ class Client
 
 	# save 
 	def save 
-		result = DB.exec("INSERT INTO clients (fname, lname, address, hair_color, phone, stylist_id) VALUES ('#{@fname}', '#{@lname}', '#{@address}', '#{@hair_color}', '#{@phone}', #{@stylist_id}) RETURNING id;")
-		@id    = result.first['id']
+		result = DB.exec("INSERT INTO clients (fname, lname, address, hair_color, phone, stylist_id) 
+			                VALUES ('#{@fname}', '#{@lname}', '#{@address}', '#{@hair_color}', '#{@phone}', #{@stylist_id}) 
+			                RETURNING id;")
+		@id    = result.first['id'].to_i
 	end
 
-	# delete 
+	def == (other_client)
+	   self.fname      == other_client.fname      &&
+		 self.lname      == other_client.lname      && 
+		 self.address    == other_client.address    &&
+		 self.hair_color == other_client.hair_color && 
+		 self.phone      == other_client.phone      && 
+		 self.stylist_id == other_client.stylist_id &&
+		 self.id         == other_client.id 
+	end
+
+	# delete s
 	def delete 
 	end
 

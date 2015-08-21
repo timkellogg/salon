@@ -62,4 +62,36 @@ describe Client do
 		end
 	end
 
+	describe '#==' do  
+		it 'should consider equal two clients whose attributes other than ids are the same' do  
+			client = Client.new({ fname: 'Big', lname: 'McLargeHuge', address: '123 Secondary Street', 
+			                      hair_color: 'brown', phone: '1234567', stylist_id: 1, id: nil })
+			expect(@client).to eq client 
+		end
+	end
+
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
