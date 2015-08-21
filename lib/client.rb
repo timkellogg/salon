@@ -60,6 +60,7 @@ class Client
 
 	# delete s
 	def delete 
+		DB.exec("DELETE FROM clients WHERE id = #{self.id}")
 	end
 
 	# update 

@@ -76,6 +76,14 @@ describe Client do
 			expect(Client.find(@client.id)).to eq @client 
 		end
 	end
+
+	describe '#delete' do  
+		it 'should remove the client from the database' do  
+			@client.save 
+			@client.delete 
+			expect(Client.all).to eq []
+		end
+	end
 end
 
 
