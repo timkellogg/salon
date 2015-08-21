@@ -4,6 +4,37 @@
 * Kellogg
 ##	Setup
 
+* Setting up database: 
+
+__Recreate clients__
+
+                                Table "public.clients"
+   Column   |       Type        |                      Modifiers                       
+------------+-------------------+------------------------------------------------------
+ id         | integer           | not null default nextval('clients_id_seq'::regclass)
+ fname      | character varying | 
+ lname      | character varying | 
+ address    | character varying | 
+ hair_color | character varying | 
+ phone      | character varying | 
+ stylist_id | integer           | 
+Indexes:
+    "clients_pkey" PRIMARY KEY, btree (id)
+
+__Recreate stylists__
+
+                              Table "public.stylists"
+ Column |       Type        |                       Modifiers                       
+--------+-------------------+-------------------------------------------------------
+ id     | integer           | not null default nextval('stylists_id_seq'::regclass)
+ fname  | character varying | 
+ lname  | character varying | 
+ styles | character varying | 
+Indexes:
+    "stylists_pkey" PRIMARY KEY, btree (id)
+
+
+
 * Download the Repo
 * `cd` into the Directory
 * `ruby app.rb` to start the server
