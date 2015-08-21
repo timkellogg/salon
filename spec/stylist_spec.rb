@@ -35,4 +35,7 @@ describe Stylist do
 		end
 	end
 
+	describe '#==' do 
+		
+	end
 end
