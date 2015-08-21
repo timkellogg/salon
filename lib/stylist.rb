@@ -30,7 +30,14 @@ class Stylist
 	def update 
 	end
 
-	def self.find 
+	def self.find (other_stylist_id)
+		found_stylist = nil 
+		Stylist.all.each do |stylist|
+			if stylist.id == other_stylist_id
+				found_stylist = stylist
+			end
+		end
+		found_stylist
 	end
 
 	def self.all
