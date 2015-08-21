@@ -57,3 +57,17 @@ post '/clients' do
 	client.save
 	redirect '/clients'
 end
+
+# clients -- edit
+get '/client/:id/edit' do
+	@stylists   = Stylist.all
+	id          = params['id'].to_i
+	client      = Client.find(id)
+	@fname      = client.fname
+	@lname      = client.lname
+	@address    = client.address
+	@hair_color = client.hair_color
+	@phone 		  = client.phone
+	@stylist_id = client.stylist_id.to_i
+	erb :client_edit_form
+end

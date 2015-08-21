@@ -39,4 +39,9 @@ describe 'when creating a client', { type: :feature } do
 		click_button 'Add client'
 		expect(page).to have_content 'Donald Trump'
 	end
+
+  it 'should allow the user to edit a client' do
+    click_link 'Edit'
+    expect(page).to have_content 'Edit Donald Trump'
+  end
 end
