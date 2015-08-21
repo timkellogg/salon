@@ -40,6 +40,4 @@ describe 'when creating a stylist', { type: :feature } do
 		click_button 'Add stylist'
 		expect(page).to have_content 'Joe Pesci'
 	end
-
-
 end

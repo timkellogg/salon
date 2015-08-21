@@ -22,11 +22,18 @@ get '/clients' do
 	erb :clients
 end
 
-# clients -- new
+# stylist -- new
 get '/stylist/new' do
 	erb :stylist_create_form
 end
 
+# clients -- new
+get '/client/new' do
+	@stylists = Stylist.all 
+	erb :client_create_form
+end
+
+# stylists -- create
 post '/stylists' do
 	fname   = params['fname']
 	lname   = params['lname']
