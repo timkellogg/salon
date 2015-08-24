@@ -2,7 +2,7 @@
 
 #### Hair Salon is a web app to help organize clients and stylists, August 23rd, 2015
 
-#### By _**Tim KEllogg**_
+#### By _**Tim Kellogg**_
 
 ## Description 
 
