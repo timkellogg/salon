@@ -46,6 +46,16 @@ class Stylist
 		found_stylist
 	end
 
+	def clients 
+		clients = []
+		Client.all.each do |client|
+			if client.stylist_id == self.id 
+				clients.push client 
+			end
+		end
+		clients
+	end
+
 	def self.all
 		returned_stylists = DB.exec("SELECT * FROM stylists;")
 		stylists          = []

@@ -1,3 +1,4 @@
+require 'pry'
 require 'spec_helper'
 
 describe Stylist do 
@@ -63,6 +64,16 @@ describe Stylist do
 			@stylist.update({ fname: 'Bruce', lname: 'Wayne', styles: 'modern'})
 			expect(@stylist.fname).to eq 'Bruce'
 			expect(@stylist.styles).to eq 'modern'
+		end
+	end
+
+	describe '#clients' do 
+		it 'should return the clients associated with the stylist' do  
+			@stylist.save 
+			client = Client.new({ fname: 'Big', lname: 'McLargeHuge', address: '123 Secondary Street', 
+			                     hair_color: 'brown', phone: '1234567', stylist_id: @stylist.id, id: nil })
+			client.save
+			expect(@stylist.clients).to eq [client]
 		end
 	end
 end
